@@ -221,7 +221,16 @@ function toggleAttendanceDetails() {
 
 
         if (!isAttending) {
+
             adultsSelect.value = "";
+
+        } else if (!adultsSelect.value) {
+
+            /* Es obvio que al menos la persona
+               que confirma asistirá */
+
+            adultsSelect.value = "1";
+
         }
 
     }
@@ -315,6 +324,27 @@ if (
 
                 formMessage.textContent =
                     "Selecciona si asistirás a la celebración.";
+
+                return;
+            }
+
+
+
+            /* -----------------------------------------
+               Si asiste, el número de adultos
+               no puede quedar vacío
+            ----------------------------------------- */
+
+            if (
+                attendanceInput.value === "si" &&
+                adultsSelect &&
+                !adultsSelect.value
+            ) {
+
+                formMessage.textContent =
+                    "Indica cuántos adultos asistirán.";
+
+                adultsSelect.focus();
 
                 return;
             }
