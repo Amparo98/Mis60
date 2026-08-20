@@ -27,24 +27,28 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
+
 <body>
 
 <main class="invitation">
 
     <!-- =====================================================
-         SECCIÓN 1 · INVITACIÓN - FONDO BEIGE
+         SECCIÓN 1 · INVITACIÓN
     ====================================================== -->
+
     <div class="beige-section">
 
-        <!-- PRESENTACIÓN -->
         <section class="hero">
 
+            <!-- Rosas superiores -->
             <img
                 src="assets/images/rosas-superior.png"
                 alt=""
                 class="hero-roses"
             >
 
+
+            <!-- INTRODUCCIÓN -->
             <div class="hero-intro">
 
                 <p class="intro">
@@ -109,6 +113,7 @@
                     La fecha del gran día será...
                 </p>
 
+
                 <div class="event-date">
 
                     <div class="date-side date-left">
@@ -126,13 +131,17 @@
                 </div>
 
 
-                <!-- SEPARADOR CORAZÓN -->
+                <!-- Separador -->
                 <div class="heart-divider">
-                    <span></span>
-
-                    <div class="heart">♥</div>
 
                     <span></span>
+
+                    <div class="heart">
+                        ♥
+                    </div>
+
+                    <span></span>
+
                 </div>
 
             </div>
@@ -140,16 +149,20 @@
         </section>
 
 
-        <!-- CUENTA ATRÁS -->
+        <!-- =====================================================
+             CUENTA ATRÁS
+        ====================================================== -->
+
         <section class="countdown-section">
 
             <h2 class="countdown-title">
                 Faltan
             </h2>
 
+
             <div class="countdown">
 
-                <!-- DÍAS -->
+                <!-- Días -->
                 <div class="countdown-item">
 
                     <div class="countdown-circle">
@@ -161,10 +174,12 @@
                 </div>
 
 
-                <span class="countdown-dot">·</span>
+                <span class="countdown-dot">
+                    ·
+                </span>
 
 
-                <!-- HORAS -->
+                <!-- Horas -->
                 <div class="countdown-item">
 
                     <div class="countdown-circle">
@@ -176,10 +191,12 @@
                 </div>
 
 
-                <span class="countdown-dot">·</span>
+                <span class="countdown-dot">
+                    ·
+                </span>
 
 
-                <!-- MINUTOS -->
+                <!-- Minutos -->
                 <div class="countdown-item">
 
                     <div class="countdown-circle">
@@ -195,7 +212,7 @@
         </section>
 
 
-        <!-- ROSAS INFERIORES -->
+        <!-- Rosas inferiores -->
         <img
             src="assets/images/rosas-superior.png"
             alt=""
@@ -207,11 +224,11 @@
 
 
     <!-- =====================================================
-         SECCIÓN 2 · LUGAR DEL EVENTO - FONDO ROJO
+         SECCIÓN 2 · LUGAR DEL EVENTO
     ====================================================== -->
+
     <section class="venue-section">
 
-        <!-- Imagen del local -->
         <img
             src="assets/images/LOCAL.png"
             alt="Villa Nueva Eventos"
@@ -219,19 +236,16 @@
         >
 
 
-        <!-- Nombre -->
         <h2 class="venue-name">
             Villa Nueva Eventos
         </h2>
 
 
-        <!-- Dirección -->
         <p class="venue-address">
             Jr. Alfonso Ugarte #255
         </p>
 
 
-        <!-- Ubicación -->
         <a
             href="https://maps.app.goo.gl/Pyk7VWhcwkG1ZM2k8"
             class="location-button"
@@ -242,19 +256,19 @@
         </a>
 
 
-        <!-- Separador -->
         <div class="venue-divider">
 
             <span></span>
 
-            <div>♥</div>
+            <div>
+                ♥
+            </div>
 
             <span></span>
 
         </div>
 
 
-        <!-- REGLAS -->
         <h3 class="rules-title">
             Detalles para disfrutar
         </h3>
@@ -286,24 +300,38 @@
 
     </section>
 
+
+
     <!-- =====================================================
-        SECCIÓN 3 · CONFIRMACIÓN - FONDO BEIGE
+         SECCIÓN 3 · CONFIRMACIÓN
     ====================================================== -->
+
     <section class="confirmation-section">
 
         <h2 class="confirmation-title">
             Confirma tu asistencia
         </h2>
 
+
         <p class="confirmation-text">
             Espero que puedas compartir conmigo<br>
             este día tan especial
         </p>
 
-        <form id="confirmationForm" class="confirmation-form">
 
+        <!-- FORMULARIO -->
+        <form
+            id="confirmationForm"
+            class="confirmation-form"
+        >
+
+
+            <!-- Nombre -->
             <div class="form-group">
-                <label for="name">Nombre</label>
+
+                <label for="name">
+                    Nombre
+                </label>
 
                 <input
                     type="text"
@@ -312,18 +340,23 @@
                     placeholder="Escribe tu nombre"
                     required
                 >
+
             </div>
 
 
+
+            <!-- Asistencia -->
             <div class="form-group">
 
                 <label>
                     ¿Participarás en la celebración?
                 </label>
 
+
                 <div class="radio-group">
 
                     <label class="radio-option">
+
                         <input
                             type="radio"
                             name="attendance"
@@ -334,10 +367,12 @@
                         <span>
                             ¡Por supuesto, no me lo perdería por nada del mundo!
                         </span>
+
                     </label>
 
 
                     <label class="radio-option">
+
                         <input
                             type="radio"
                             name="attendance"
@@ -347,6 +382,7 @@
                         <span>
                             Lamentablemente no puedo asistir
                         </span>
+
                     </label>
 
                 </div>
@@ -354,52 +390,81 @@
             </div>
 
 
+
+            <!-- PERSONAS -->
             <div class="form-group">
 
-    <label>
-        ¿Cuántas personas asistirán?
-    </label>
+                <label>
+                    ¿Cuántas personas asistirán?
+                </label>
 
-    <div class="guests-row">
 
-            <div class="guest-field">
-                <label for="adults">Adultos</label>
+                <div class="guests-row">
 
-                <select
-                    id="adults"
-                    name="adults"
-                    required
-                >
-                    <option value="">Selecciona</option>
-                    <option value="1">1 adulto</option>
-                    <option value="2">2 adultos</option>
-                    <option value="3">3 adultos</option>
-                    <option value="4">4 adultos</option>
-                    <option value="5">5 adultos</option>
-                    <option value="6">6 adultos</option>
-                </select>
-            </div>
 
-            <div class="guest-field">
-                    <label for="children">Niños</label>
+                    <!-- Adultos -->
+                    <div class="guest-field">
 
-                    <select
-                        id="children"
-                        name="children"
-                        required
-                    >
-                        <option value="0" selected>0 niños</option>
-                        <option value="1">1 niño</option>
-                        <option value="2">2 niños</option>
-                        <option value="3">3 niños</option>
-                        <option value="4">4 niños</option>
-                        <option value="5">5 niños</option>
-                    </select>
+                        <label for="adults">
+                            Adultos
+                        </label>
+
+                        <select
+                            id="adults"
+                            name="adults"
+                            required
+                        >
+
+                            <option value="">
+                                Selecciona
+                            </option>
+
+                            <option value="1">1 adulto</option>
+                            <option value="2">2 adultos</option>
+                            <option value="3">3 adultos</option>
+                            <option value="4">4 adultos</option>
+                            <option value="5">5 adultos</option>
+                            <option value="6">6 adultos</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Niños -->
+                    <div class="guest-field">
+
+                        <label for="children">
+                            Niños
+                        </label>
+
+                        <select
+                            id="children"
+                            name="children"
+                        >
+
+                            <option value="0" selected>
+                                0 niños
+                            </option>
+
+                            <option value="1">1 niño</option>
+                            <option value="2">2 niños</option>
+                            <option value="3">3 niños</option>
+                            <option value="4">4 niños</option>
+                            <option value="5">5 niños</option>
+
+                        </select>
+
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+
+
+            <!-- Teléfono -->
             <div class="form-group">
 
                 <label for="phone">
@@ -416,6 +481,8 @@
             </div>
 
 
+
+            <!-- Canción -->
             <div class="form-group">
 
                 <label for="song">
@@ -432,35 +499,92 @@
             </div>
 
 
+
+            <!-- Botón -->
             <button
                 type="submit"
                 class="confirmation-button"
             >
                 CONFIRMA AHORA
             </button>
-            <p id="formMessage" class="form-message"></p>
+
+
+            <p
+                id="formMessage"
+                class="form-message"
+            ></p>
 
         </form>
-        <div id="confirmationSummary" class="confirmation-summary hidden">
-            <h3>¡Gracias por confirmar!</h3>
 
-            <p><strong>Nombre:</strong> <span id="summaryName"></span></p>
-            <p><strong>Asistencia:</strong> <span id="summaryAttendance"></span></p>
-            <p><strong>Adultos:</strong> <span id="summaryAdults"></span></p>
-            <p><strong>Niños:</strong> <span id="summaryChildren"></span></p>
-            <p><strong>Canción:</strong> <span id="summarySong"></span></p>
+
+
+        <!-- =====================================================
+             RESUMEN
+             OCULTO HASTA CONFIRMAR
+        ====================================================== -->
+
+        <div
+            id="confirmationSummary"
+            class="confirmation-summary"
+            hidden
+        >
+
+            <h3>
+                ¡Gracias por confirmar!
+            </h3>
+
+
+            <p>
+                <strong>Nombre:</strong>
+                <span id="summaryName"></span>
+            </p>
+
+
+            <p>
+                <strong>Asistencia:</strong>
+                <span id="summaryAttendance"></span>
+            </p>
+
+
+            <p>
+                <strong>Adultos:</strong>
+                <span id="summaryAdults"></span>
+            </p>
+
+
+            <p>
+                <strong>Niños:</strong>
+                <span id="summaryChildren"></span>
+            </p>
+
+
+            <p>
+                <strong>Canción:</strong>
+                <span id="summarySong"></span>
+            </p>
+
         </div>
 
+
+
+        <!-- Separador final -->
         <div class="confirmation-divider">
+
             <span></span>
-            <div>♥</div>
+
+            <div>
+                ♥
+            </div>
+
             <span></span>
+
         </div>
 
 
         <p class="final-message">
             Será una noche inolvidable
         </p>
+
 
         <p class="dont-miss">
             NO FALTES
@@ -470,7 +594,9 @@
 
 </main>
 
+
 <script src="js/app.js"></script>
 
 </body>
+
 </html>
