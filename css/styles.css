@@ -699,36 +699,45 @@ select {
 }
 /* Entrada progresiva de las reglas */
 
+/* =====================================================
+   ANIMACIÓN REGLAS
+===================================================== */
+
 .rule-item {
     opacity: 0;
-    transform: translateX(-20px);
+
+    transform: translateY(22px);
 
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
+
+    will-change: opacity, transform;
 }
 
 .rules.visible .rule-item {
     opacity: 1;
-    transform: translateX(0);
+
+    transform: translateY(0);
 }
 
-/* Una detrás de otra */
+
+/* Aparición progresiva */
 
 .rules.visible .rule-item:nth-child(1) {
     transition-delay: 0s;
 }
 
 .rules.visible .rule-item:nth-child(2) {
-    transition-delay: 0.20s;
+    transition-delay: 0.18s;
 }
 
 .rules.visible .rule-item:nth-child(3) {
-    transition-delay: 0.40s;
+    transition-delay: 0.36s;
 }
 
 .rules.visible .rule-item:nth-child(4) {
-    transition-delay: 0.60s;
+    transition-delay: 0.54s;
 }
 
 /* =====================================================
