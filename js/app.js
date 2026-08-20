@@ -134,12 +134,8 @@ form.addEventListener("submit", async (e) => {
             formData.song || "Sin canción sugerida";
 
 
-        // OCULTAMOS FORMULARIO
-        form.classList.add("hidden");
-
-
-        // MOSTRAMOS RESUMEN
-        confirmationSummary.classList.remove("hidden");
+        form.hidden = true;
+        confirmationSummary.hidden = false;
 
 
     } catch (error) {
