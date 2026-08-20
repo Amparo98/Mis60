@@ -804,3 +804,40 @@ img {
 
     color: var(--red-main);
 }
+
+.hidden {
+    display: none;
+}
+
+.confirmation-summary {
+    max-width: 350px;
+    margin: 0 auto;
+
+    padding: 25px;
+
+    border: 1px solid #c99a87;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    text-align: left;
+}
+
+.confirmation-summary h3 {
+    font-family: "EB Garamond", serif;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 500;
+
+    color: var(--red-main);
+
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.confirmation-summary p {
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}

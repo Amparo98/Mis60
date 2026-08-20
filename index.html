@@ -388,8 +388,7 @@
                         name="children"
                         required
                     >
-                        <option value="">Selecciona</option>
-                        <option value="0">0 niños</option>
+                        <option value="0" selected>0 niños</option>
                         <option value="1">1 niño</option>
                         <option value="2">2 niños</option>
                         <option value="3">3 niños</option>
@@ -442,7 +441,15 @@
             <p id="formMessage" class="form-message"></p>
 
         </form>
+        <div id="confirmationSummary" class="confirmation-summary hidden">
+            <h3>¡Gracias por confirmar!</h3>
 
+            <p><strong>Nombre:</strong> <span id="summaryName"></span></p>
+            <p><strong>Asistencia:</strong> <span id="summaryAttendance"></span></p>
+            <p><strong>Adultos:</strong> <span id="summaryAdults"></span></p>
+            <p><strong>Niños:</strong> <span id="summaryChildren"></span></p>
+            <p><strong>Canción:</strong> <span id="summarySong"></span></p>
+        </div>
 
         <div class="confirmation-divider">
             <span></span>
