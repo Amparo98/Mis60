@@ -169,6 +169,88 @@ setInterval(
 
 
 /* =====================================================
+   MOSTRAR / OCULTAR DETALLES SEGÚN ASISTENCIA
+===================================================== */
+
+const attendanceRadios =
+    document.querySelectorAll(
+        'input[name="attendance"]'
+    );
+
+
+const attendanceDetails =
+    document.getElementById(
+        "attendanceDetails"
+    );
+
+
+const adultsSelect =
+    document.getElementById("adults");
+
+const childrenSelect =
+    document.getElementById("children");
+
+
+function toggleAttendanceDetails() {
+
+    const checked =
+        document.querySelector(
+            'input[name="attendance"]:checked'
+        );
+
+
+    if (!attendanceDetails) {
+        return;
+    }
+
+
+    const isAttending =
+        checked && checked.value === "si";
+
+
+    attendanceDetails.hidden =
+        !isAttending;
+
+
+    /* Solo exigimos adultos si asiste */
+
+    if (adultsSelect) {
+
+        adultsSelect.required =
+            isAttending;
+
+
+        if (!isAttending) {
+            adultsSelect.value = "";
+        }
+
+    }
+
+
+    if (childrenSelect && !isAttending) {
+        childrenSelect.value = "0";
+    }
+
+}
+
+
+attendanceRadios.forEach((radio) => {
+
+    radio.addEventListener(
+        "change",
+        toggleAttendanceDetails
+    );
+
+});
+
+
+/* Estado inicial (por si el navegador recuerda una selección) */
+
+toggleAttendanceDetails();
+
+
+
+/* =====================================================
    FORMULARIO
 ===================================================== */
 

@@ -399,102 +399,97 @@
                 </label>
 
 
-                <div class="guests-row">
+                <!-- Bloque que se oculta si la persona no asistirá -->
+                <div id="attendanceDetails" class="attendance-details">
+
+                    <div class="guests-row">
+
+                        <!-- Adultos -->
+                        <div class="guest-field">
+
+                            <label for="adults">
+                                Adultos
+                            </label>
+
+                            <select
+                                id="adults"
+                                name="adults"
+                            >
+
+                                <option value="">
+                                    Selecciona
+                                </option>
+
+                                <option value="1">1 adulto</option>
+                                <option value="2">2 adultos</option>
+                                <option value="3">3 adultos</option>
+                                <option value="4">4 adultos</option>
+                                <option value="5">5 adultos</option>
+                                <option value="6">6 adultos</option>
+
+                            </select>
+
+                        </div>
 
 
-                    <!-- Adultos -->
-                    <div class="guest-field">
+                        <!-- Niños -->
+                        <div class="guest-field">
 
-                        <label for="adults">
-                            Adultos
-                        </label>
+                            <label for="children">
+                                Niños
+                            </label>
 
-                        <select
-                            id="adults"
-                            name="adults"
-                            required
-                        >
+                            <select
+                                id="children"
+                                name="children"
+                            >
+                                <option value="0" selected>0 niños</option>
+                                <option value="1">1 niño</option>
+                                <option value="2">2 niños</option>
+                                <option value="3">3 niños</option>
+                                <option value="4">4 niños</option>
+                                <option value="5">5 niños</option>
+                            </select>
 
-                            <option value="">
-                                Selecciona
-                            </option>
-
-                            <option value="1">1 adulto</option>
-                            <option value="2">2 adultos</option>
-                            <option value="3">3 adultos</option>
-                            <option value="4">4 adultos</option>
-                            <option value="5">5 adultos</option>
-                            <option value="6">6 adultos</option>
-
-                        </select>
+                        </div>
 
                     </div>
 
 
+                    <!-- Teléfono -->
+                    <div class="form-group">
 
-                    <!-- Niños -->
-                    <div class="guest-field">
-
-                        <label for="children">
-                            Niños
+                        <label for="phone">
+                            Teléfono
                         </label>
 
-                        <select
-                            id="children"
-                            name="children"
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Tu número de teléfono"
                         >
 
-                            <option value="0" selected>
-                                0 niños
-                            </option>
+                    </div>
 
-                            <option value="1">1 niño</option>
-                            <option value="2">2 niños</option>
-                            <option value="3">3 niños</option>
-                            <option value="4">4 niños</option>
-                            <option value="5">5 niños</option>
 
-                        </select>
+                    <!-- Canción -->
+                    <div class="form-group">
+
+                        <label for="song">
+                            Sugiere tu canción favorita para bailar
+                        </label>
+
+                        <input
+                            type="text"
+                            id="song"
+                            name="song"
+                            placeholder="Nombre de la canción"
+                        >
 
                     </div>
 
                 </div>
-
-            </div>
-
-
-
-            <!-- Teléfono -->
-            <div class="form-group">
-
-                <label for="phone">
-                    Teléfono
-                </label>
-
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Tu número de teléfono"
-                >
-
-            </div>
-
-
-
-            <!-- Canción -->
-            <div class="form-group">
-
-                <label for="song">
-                    Sugiere tu canción favorita para bailar
-                </label>
-
-                <input
-                    type="text"
-                    id="song"
-                    name="song"
-                    placeholder="Nombre de la canción"
-                >
 
             </div>
 
