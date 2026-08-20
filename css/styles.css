@@ -94,7 +94,9 @@ select {
     max-width: 45%;
 
     pointer-events: none;
-
+    transform:
+            translateY(-20px)
+            translateX(-10px);
     z-index: 2;
 }
 
@@ -202,8 +204,8 @@ select {
 }
 
 .celebrate {
-    font-family: "Monotype Corsiva", serif;
-    font-size: clamp(20px, 5.5vw, 24px);
+    font-family: "Courgette", cursive;
+    font-size: clamp(20px, 5.5vw, 20px);
     font-weight: 500;
     line-height: 1.4;
 }
@@ -267,7 +269,7 @@ select {
 .message {
     margin-bottom: 20px;
 
-    font-family: "EB Garamond", serif;
+    font-family: "Courgette", cursive;
     font-size: clamp(21px, 5.5vw, 24px);
     font-weight: 500;
     line-height: 1.4;
@@ -286,7 +288,6 @@ select {
 
 .date-side {
     flex: 1;
-
     height: 64px;
 
     display: flex;
@@ -296,6 +297,7 @@ select {
     border-top: 2px solid var(--line-color);
     border-bottom: 2px solid var(--line-color);
 
+    font-family: "Cinzel", serif;    
     font-size: clamp(11px, 3.5vw, 15px);
     font-weight: 600;
 
@@ -602,7 +604,7 @@ select {
 
     gap: 8px;
 
-    margin: 35px auto 25px;
+    margin: 35px auto 18px;
 }
 
 .venue-divider > span:first-child,
@@ -645,14 +647,89 @@ select {
 }
 
 .rules p {
-    margin-bottom: 13px;
+    position: relative;
+
+    padding-left: 25px;
+    margin-bottom: 18px;
 
     font-family: "EB Garamond", serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
+.rule-icon {
+    position: absolute;
+    left: 0;
+    top: 0px;
+
+    color: black;
+    font-size: 20px;
+}
+
+.rules-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+    margin-top: 30px;
+}
+
+.rules-heading > span {
+    width: 35px;
+    height: 1px;
+
+    background: rgba(245, 236, 223, 0.75);
+}
+
+.rules-title {
+    margin: 0;
+
+    font-family: "EB Garamond", serif;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+
+    color: #f5ecdf;
+
+    white-space: nowrap;
+}
+/* Entrada progresiva de las reglas */
+
+.rule-item {
+    opacity: 0;
+    transform: translateX(-20px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.rules.visible .rule-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Una detrás de otra */
+
+.rules.visible .rule-item:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.rules.visible .rule-item:nth-child(2) {
+    transition-delay: 0.20s;
+}
+
+.rules.visible .rule-item:nth-child(3) {
+    transition-delay: 0.40s;
+}
+
+.rules.visible .rule-item:nth-child(4) {
+    transition-delay: 0.60s;
+}
 
 /* =====================================================
    CONFIRMACIÓN
@@ -1090,12 +1167,3 @@ select {
     }
 }
 
-.rule-icon {
-    display: inline-block;
-    margin-right: 7px;
-
-    color: #ffffff;
-    font-size: 11px;
-
-    vertical-align: 1px;
-}

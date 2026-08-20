@@ -574,3 +574,23 @@ const revealObserver =
 revealElements.forEach((element) => {
     revealObserver.observe(element);
 });
+
+const rules = document.querySelector(".rules");
+
+if (rules) {
+    const rulesObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.25
+        }
+    );
+
+    rulesObserver.observe(rules);
+}
