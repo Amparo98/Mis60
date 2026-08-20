@@ -13,6 +13,7 @@
     --rose-gold: #a86f58;
 }
 
+
 /* =====================================================
    RESET
 ===================================================== */
@@ -48,6 +49,7 @@ select {
     display: none !important;
 }
 
+
 /* =====================================================
    CONTENEDOR PRINCIPAL
 ===================================================== */
@@ -64,6 +66,7 @@ select {
     overflow: hidden;
 }
 
+
 /* =====================================================
    SECCIÓN BEIGE
 ===================================================== */
@@ -76,23 +79,14 @@ select {
     overflow: hidden;
 }
 
+
 /* =====================================================
-   ROSAS
+   ROSAS SUPERIORES
 ===================================================== */
-
-.hero-roses,
-.bottom-roses {
-    position: absolute;
-
-    width: 170px;
-    max-width: 45%;
-
-    pointer-events: none;
-    z-index: 2;
-}
 
 .hero-roses {
     position: absolute;
+
     top: 0;
     left: 0;
 
@@ -100,7 +94,14 @@ select {
     max-width: 45%;
 
     pointer-events: none;
+
+    z-index: 2;
 }
+
+
+/* =====================================================
+   ROSAS INFERIORES
+===================================================== */
 
 .bottom-roses {
     position: absolute;
@@ -111,13 +112,16 @@ select {
     width: 170px;
     max-width: 45%;
 
-    transform: rotate(180deg) translateY(-20px) translateX(-10px);
+    transform:
+        rotate(180deg)
+        translateY(-20px)
+        translateX(-10px);
 
     pointer-events: none;
 
-    /* Detrás del contador */
     z-index: 1;
 }
+
 
 /* =====================================================
    HERO
@@ -164,6 +168,7 @@ select {
     text-transform: uppercase;
 }
 
+
 /* =====================================================
    NOMBRE
 ===================================================== */
@@ -187,6 +192,7 @@ select {
     margin: 8px auto 20px;
 }
 
+
 /* =====================================================
    CELEBRACIÓN
 ===================================================== */
@@ -196,11 +202,12 @@ select {
 }
 
 .celebrate {
-    font-family: "EB Garamond", serif;
+    font-family: "Monotype Corsiva", serif;
     font-size: clamp(20px, 5.5vw, 24px);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.4;
 }
+
 
 /* =====================================================
    GLOBO
@@ -214,18 +221,40 @@ select {
 
 .animar-globo {
     opacity: 0;
-
     transform: translateY(120px);
-
-    transition:
-        transform 2s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 1.3s ease-out;
 }
 
 .animar-globo.visible {
     opacity: 1;
-    transform: translateY(0);
+
+    animation:
+        entradaGlobo 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+        flotarGlobo 4s ease-in-out 1.8s infinite;
 }
+
+@keyframes entradaGlobo {
+    from {
+        opacity: 0;
+        transform: translateY(120px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotarGlobo {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
 
 /* =====================================================
    FECHA
@@ -298,6 +327,7 @@ select {
     color: #a51425;
 }
 
+
 /* =====================================================
    SEPARADOR CORAZÓN
 ===================================================== */
@@ -316,6 +346,7 @@ select {
 
 .heart-divider > span:not(.heart) {
     flex: 1;
+
     height: 1px;
 
     background: var(--rose-gold);
@@ -331,6 +362,7 @@ select {
     color: var(--red-main);
 }
 
+
 /* =====================================================
    CUENTA ATRÁS
 ===================================================== */
@@ -338,7 +370,6 @@ select {
 .countdown-section {
     position: relative;
 
-    /* Por delante de las rosas inferiores */
     z-index: 2;
 
     padding: 5px 10px 55px;
@@ -348,6 +379,7 @@ select {
 
 .countdown-title {
     position: relative;
+
     z-index: 3;
 
     margin-bottom: 14px;
@@ -362,6 +394,7 @@ select {
 
 .countdown {
     position: relative;
+
     z-index: 3;
 
     display: flex;
@@ -375,6 +408,33 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+}
+
+.countdown.visible .countdown-item {
+    animation: contadorEntrada 0.7s ease forwards;
+}
+
+.countdown.visible .countdown-item:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.countdown.visible .countdown-item:nth-of-type(2) {
+    animation-delay: 0.15s;
+}
+
+.countdown.visible .countdown-item:nth-of-type(3) {
+    animation-delay: 0.30s;
+}
+
+@keyframes contadorEntrada {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .countdown-circle {
@@ -421,6 +481,7 @@ select {
     color: #9b6250;
 }
 
+
 /* =====================================================
    SECCIÓN ROJA
 ===================================================== */
@@ -436,13 +497,37 @@ select {
     color: var(--bg-main);
 }
 
+
+/* =====================================================
+   IMAGEN DEL LOCAL
+===================================================== */
+
 .venue-image {
     width: 100%;
 
     margin: 0 auto 15px;
 
     object-fit: contain;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
 }
+
+.venue-section:not(.visible) .venue-image {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.venue-section.visible .venue-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   DATOS DEL LOCAL
+===================================================== */
 
 .venue-name {
     margin-bottom: 8px;
@@ -459,6 +544,11 @@ select {
     font-size: 17px;
     font-weight: 500;
 }
+
+
+/* =====================================================
+   BOTÓN UBICACIÓN
+===================================================== */
 
 .location-button {
     display: inline-block;
@@ -477,15 +567,27 @@ select {
     letter-spacing: 0.8px;
     text-decoration: none;
 
+    cursor: pointer;
+
     transition:
         transform 0.25s ease,
+        box-shadow 0.25s ease,
         background 0.25s ease;
 }
 
 .location-button:hover {
     transform: translateY(-2px);
+
     background: #ffffff;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
 }
+
+.location-button:active {
+    transform: scale(0.97);
+}
+
 
 /* =====================================================
    SEPARADOR SECCIÓN ROJA
@@ -520,6 +622,7 @@ select {
     color: #f5d2c2;
 }
 
+
 /* =====================================================
    REGLAS
 ===================================================== */
@@ -549,6 +652,7 @@ select {
     font-weight: 500;
     line-height: 1.4;
 }
+
 
 /* =====================================================
    CONFIRMACIÓN
@@ -586,6 +690,7 @@ select {
     font-weight: 500;
     line-height: 1.4;
 }
+
 
 /* =====================================================
    FORMULARIO
@@ -626,6 +731,7 @@ select {
     width: 100%;
 }
 
+
 /* =====================================================
    INPUTS
 ===================================================== */
@@ -654,6 +760,7 @@ select {
 .form-group select:focus {
     border-color: var(--red-main);
 }
+
 
 /* =====================================================
    RADIO BUTTONS
@@ -685,6 +792,7 @@ select {
     accent-color: var(--red-main);
 }
 
+
 /* =====================================================
    DETALLES ASISTENTES
 ===================================================== */
@@ -703,6 +811,7 @@ select {
 
 .guest-field {
     flex: 1;
+
     min-width: 0;
 }
 
@@ -731,6 +840,7 @@ select {
 
     color: var(--text-main);
 }
+
 
 /* =====================================================
    BOTÓN CONFIRMACIÓN
@@ -762,18 +872,29 @@ select {
     transition:
         transform 0.25s ease,
         background 0.25s ease,
-        opacity 0.25s ease;
+        opacity 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .confirmation-button:hover:not(:disabled) {
     transform: translateY(-2px);
+
     background: #64111d;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.confirmation-button:active:not(:disabled) {
+    transform: scale(0.98);
 }
 
 .confirmation-button:disabled {
     opacity: 0.65;
+
     cursor: not-allowed;
 }
+
 
 /* =====================================================
    MENSAJE DEL FORMULARIO
@@ -792,6 +913,7 @@ select {
 
     color: var(--red-main);
 }
+
 
 /* =====================================================
    RESUMEN CONFIRMACIÓN
@@ -832,6 +954,7 @@ select {
     font-family: "EB Garamond", serif;
     font-size: 17px;
 }
+
 
 /* =====================================================
    CIERRE
@@ -888,6 +1011,28 @@ select {
     color: var(--red-main);
 }
 
+
+/* =====================================================
+   REVEAL AL HACER SCROLL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
 /* =====================================================
    MÓVILES PEQUEÑOS
 ===================================================== */
@@ -920,6 +1065,7 @@ select {
     }
 }
 
+
 /* =====================================================
    ACCESIBILIDAD
 ===================================================== */
@@ -930,12 +1076,26 @@ select {
     *::before,
     *::after {
         scroll-behavior: auto !important;
+
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
 
-    .animar-globo {
+    .animar-globo,
+    .reveal,
+    .countdown-item {
         opacity: 1;
+
         transform: none;
     }
+}
+
+.rule-icon {
+    display: inline-block;
+    margin-right: 7px;
+
+    color: #ffffff;
+    font-size: 11px;
+
+    vertical-align: 1px;
 }
